@@ -1,0 +1,65 @@
+<header
+  class="pt-7 text-4xl md:text-6xl flex justify-center items-center w-full font-bold"
+>
+  <aside
+    (click)="toggleOpenSideMenu(el)"
+    class="absolute left-9 flex gap-1 flex-col cursor-pointer"
+  >
+    <div class="w-6 h-1 bg-brand flex gap-10 flex-col"></div>
+    <div class="w-6 h-1 bg-brand flex gap-10 flex-col"></div>
+    <div class="w-6 h-1 bg-brand flex gap-10 flex-col"></div>
+  </aside>
+  <div>
+    <nav
+      #el
+      class="z-10 absolute top-0 -left-[100vw] font-light bg-darkest h-screen text-bgColor text-lg flex flex-col gap-5 w-[300px] pl-16 pt-32 tracking-wider"
+    >
+      <button
+        (click)="toggleOpenSideMenu(el)"
+        class="absolute right-8 top-[38px] flex gap-1 flex-col"
+      >
+        <mat-icon class="scale-[1] text-bgColor">close</mat-icon>
+      </button>
+
+      <a
+        class="flex items-start gap-3"
+        routerLink="/"
+        routerLinkActive="activated"
+        ><mat-icon class="material-symbols-outlined scale-[1.1]">home</mat-icon>
+        <span>Início</span></a
+      >
+      <a
+        class="flex items-start gap-3"
+        routerLink="/cachorros"
+        routerLinkActive="activated"
+        ><mat-icon class="material-symbols-outlined scale-[1.1]"
+          >sound_detection_dog_barking</mat-icon
+        >
+        <span>Cachorros</span></a
+      ><a
+        class="flex items-start gap-3"
+        routerLink="/gatos"
+        routerLinkActive="activated"
+        ><img
+          src="../../../assets/ic_fluent_animal_cat_24_regular.png"
+          width="24"
+          class="mt-[0px]"
+        />
+        <span class="ml-[2px]">Gatos</span></a
+      ><a
+        class="flex items-start gap-3"
+        routerLink="/doacao"
+        routerLinkActive="activated"
+        ><mat-icon class="material-symbols-outlined scale-[0.90]"
+          >currency_exchange</mat-icon
+        >
+        <span>Nos Ajude</span></a
+      >
+    </nav>
+  </div>
+
+  <a class="text-primaryColor flex gap-5 items-center text-center text-darkest">
+    <mat-icon class="scale-[2.3] -mt-2 text-brand"> pets </mat-icon>
+    <h1 class="text-darkest">Adote <span class="text-brand">já</span></h1>
+  </a>
+</header>
