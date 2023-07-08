@@ -8,9 +8,10 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { NgIconsModule } from '@ng-icons/core';
 import { tablerCat } from '@ng-icons/tabler-icons';
+import { FooterComponent } from './common-components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

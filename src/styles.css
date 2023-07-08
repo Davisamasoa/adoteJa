@@ -22,12 +22,13 @@
 
 html,
 body {
-  height: 100%;
   background-color: var(--bgColor);
 }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  position: relative;
+  min-height: 90vh;
 }
 
 .activated {
