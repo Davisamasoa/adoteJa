@@ -3,7 +3,7 @@
 >
   <aside
     (click)="toggleOpenSideMenu(el)"
-    class="absolute left-9 flex gap-1 flex-col cursor-pointer"
+    class="absolute z-20 left-9 flex gap-1 flex-col cursor-pointer"
   >
     <div class="w-6 h-1 bg-brand flex gap-10 flex-col"></div>
     <div class="w-6 h-1 bg-brand flex gap-10 flex-col"></div>
@@ -12,7 +12,7 @@
   <div>
     <nav
       #el
-      class="z-10 absolute top-0 -left-[100vw] font-light bg-darkest h-screen text-bgColor text-lg flex flex-col gap-5 w-[300px] pl-16 pt-32 tracking-wider"
+      class="z-20 fixed top-0 -left-[100vw] font-light bg-darkest h-screen text-bgColor sm:text-lg text-sm flex flex-col gap-5 sm:w-[300px] w-[60vw] sm:pl-16 pl-10 pt-32 tracking-wider"
     >
       <button
         (click)="toggleOpenSideMenu(el)"
@@ -22,35 +22,40 @@
       </button>
 
       <a
-        class="flex items-start gap-3 sm:hover:opacity-70 transition duration-300"
+        class="flex sm:items-start items-end gap-3 sm:hover:opacity-70 transition duration-300"
         routerLink="/"
         routerLinkActive="activated"
-        ><mat-icon class="material-symbols-outlined scale-[1.1]">home</mat-icon>
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><mat-icon class="material-symbols-outlined scale-[0.85] sm:scale-[1.1]"
+          >home</mat-icon
+        >
         <span>Início</span></a
       >
       <a
-        class="flex items-start gap-3 sm:hover:opacity-70 transition duration-300"
+        class="flex sm:items-start items-end gap-3 sm:hover:opacity-70 transition duration-300"
         routerLink="/cachorros"
         routerLinkActive="activated"
-        ><mat-icon class="material-symbols-outlined scale-[1.1]"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><mat-icon class="material-symbols-outlined scale-[0.85] sm:scale-[1.1]"
           >sound_detection_dog_barking</mat-icon
         >
         <span>Cachorros</span></a
       ><a
-        class="flex items-start gap-3 sm:hover:opacity-70 transition duration-300"
+        class="flex sm:items-start items-end gap-3 sm:hover:opacity-70 transition duration-300"
         routerLink="/gatos"
         routerLinkActive="activated"
+        [routerLinkActiveOptions]="{ exact: true }"
         ><img
           src="../../../assets/ic_fluent_animal_cat_24_regular.png"
-          width="24"
-          class="mt-[0px]"
+          class="pl-[3px] sm:pl-0 sm:w-6 w-[22px] opacity-[0.85]"
         />
-        <span class="ml-[2px]">Gatos</span></a
+        <span class="ml-[1px]">Gatos</span></a
       ><a
-        class="flex items-start gap-3 sm:hover:opacity-70 transition duration-300"
+        class="flex sm:items-start items-end gap-3 sm:hover:opacity-70 transition duration-300"
         routerLink="/doacao"
         routerLinkActive="activated"
-        ><mat-icon class="material-symbols-outlined scale-[0.90]"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><mat-icon class="material-symbols-outlined scale-[0.7] sm:scale-[0.90]"
           >currency_exchange</mat-icon
         >
         <span>Nos Ajude</span></a
@@ -62,4 +67,9 @@
     <mat-icon class="scale-[2.3] -mt-2 text-brand"> pets </mat-icon>
     <h1 class="text-darkest">Adote <span class="text-brand">já</span></h1>
   </a>
+  <div
+    *ngIf="openSideNav"
+    (click)="toggleOpenSideMenu(el)"
+    class="w-screen h-screen fixed top-0 left-0 bg-black opacity-25 z-10"
+  ></div>
 </header>
